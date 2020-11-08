@@ -28,7 +28,7 @@ To the directory: %APPDATA%\Autodesk\Inventor {Year/Version} \Addins\
 
 ## General Usage Instructions
 
-This tool distingues 2 items. The "Button definition" and the "Place definition". With the following properties 
+This tool distinguish 2 items. The "Button definition" and the "Place definition". With the following properties
 | Button definition | Place definition |
 |------------|-----------|
 |Small icon path| Ribbon name|
@@ -66,9 +66,9 @@ Create a button:
 
 ![Button definition Form](images/delete.png)
 
-**All changes will take effect afther you restarted Inventor.**
+**All changes will take effect after you restarted Inventor.**
 
- ## Advance Usage Instructions
+ ## Advance usage Instructions
 
  When usig the basic settings its only possible to select exsisting places. 
  In the "Advanced" tab, of the "Place definition form", its also posible create your own "Ribbon Tabs" and "Ribbon pannels". 
@@ -82,7 +82,7 @@ All settings are saved in the file "RuleButtonSettings.Xml". (You can find the f
  - It's possible to create internal names for buttons.  
    - This is necessary if you have 2 buttons with the same (internal) name
 
- (At the time of this writing its not jet possible to set this using the forms.)
+(At the time of this writing it's not yet possible to set this using the forms.)
 
 Here you see the "ExternalRuleButton" node with all possible sub nodes for a button: 
 ```text
@@ -99,7 +99,7 @@ Here you see the "ExternalRuleButton" node with all possible sub nodes for a but
 </ExternalRuleButton>
 ```
 When editing the xml file keep the following in mind:
- - The "settingsButton" node may have the same sub nodes!
+ - The "settingsButton" node may have the same subnodes!
  - xml nodes are case sensitive.
  - you may need to escape special characters.
 
@@ -115,6 +115,7 @@ All information processed by the application remains on the local device and is 
  - Add description textbox to settings form. 
  - Create support for VBa rules.
  - Option to set standard or small size.
+ - Better support for dark theme.
 
  ## Donate
  This addon is a completely free. However if you find it useful and it saves you time I would appreciate [a donation](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=K8TUGQGWS22H4&item_name=My+addons+are+completely+free.+However+if+you+find+it+useful+and+it+saves+you+time+I+would+appreciate+a+donation.&currency_code=EUR).
