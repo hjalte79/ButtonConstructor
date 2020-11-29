@@ -41,7 +41,9 @@ This tool distinguish 2 items. The "Button definition" and the "Place definition
 _(* See advanced instructions for more information)_
 
 These properties can be set in the Settings form. That form can found on 
-_"(Ribbon)ZeroDoc" --> "(Tab)Tools" --> "(panel)iLogic"_
+ - _"(Ribbon)ZeroDoc" --> "(Tab)Tools" --> "(panel)iLogic"_
+ - _"(Ribbon)Part" --> "(Tab)Manage" --> "(panel)iLogic"_
+ - _"(Ribbon)Assembly" --> "(Tab)Manage" --> "(panel)iLogic"_
 
 ![Settings Form](images/SettingsButton.png)
 
@@ -76,7 +78,7 @@ Create a button:
 
  ![Button definition Form](images/ButtonDefintionFormAdvanced.png)
 
-All settings are saved in the file "RuleButtonSettings.Xml". (You can find the file in your addon directory. Usually that is the directory: "%APPDATA%\Autodesk\Inventor {Year/version here}\Addins\")  It's possible to edit that file manualy. That has 2 advantages.
+All settings are saved in the file "RuleButtonSettings.Xml". (You can find the file in your addon directory. See chapeter: "Settings file for the addin.")  It's possible to edit that file manualy. That has 2 advantages.
  - It's possible to add Description/Tooltip to a button.
  - It's possible to have a diferent button name then the rule name.
  - It's possible to create internal names for buttons.  
@@ -104,6 +106,43 @@ When editing the xml file keep the following in mind:
  - you may need to escape special characters.
 
 For cad managers: It's possible to copy this file to other computers for easy distribution of the button settings to other users.
+
+## Settings file for the addin.
+In some situation you might want to edit the setting files. This is how you can find the files:
+
+ - Start inventor.
+ - Click on the tab tools and select addins.
+ - In the following window select this addon (Hjalte.ButtonConstructor)
+ - now in the bottom of the window the file location of the dll is given. That is also the file location of all setting files.
+
+![Addin path](images/AddinLoaction.png )
+
+## Using the addin on older unsupported versions of Inventor.
+This addon has only be tested on Inventor 2020 and 2021. I dont own other versions so i cant test the following information. But with a little tweaking it might also work on earlyer versions. Do the following:
+
+ - Find the settings file: "Hjalte.ButtonConstructor.addin" (See chapeter: "Settings file for the addin.")
+    - in my case the full path is: "C:\ProgramData\Autodesk\ApplicationPlugins\Button Constructor.bundle\Contents\Hjalte.ButtonConstructor.addin"
+ - edit the file  with Notepad.
+ - find the text: "\<SupportedSoftwareVersionGreaterThan\>23..\</SupportedSoftwareVersionGreaterThan\>"
+ - Replace it with: "\<SupportedSoftwareVersionGreaterThan\>15..\</SupportedSoftwareVersionGreaterThan\>"
+
+![Replace text](images/EditAddinFile.png )
+
+Let meknow if it worked.
+
+## Known issues
+### Settings button cant be found. 
+There have been reports that the settings button is hidden when none document is open. In those cases customise your ribbons to show the panel "iLogic" if none document is open.
+If that is not an option use the other places to configur the addon. 
+
+### Buttons are remaoved in the addin settings but are still shown.
+It has been reported that sometimes buttons are not removed afther restarting inventor. In those cases is the solution:
+ - block the addin in Inventor. 
+ - restart inventor. 
+ - find the location of the button.
+ - start customizing your ribbon. Just open the window and close it again)
+ - restart Inevntor
+ - unblock the addon.
 
 ## Privacy Policy
 
